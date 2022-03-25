@@ -1,6 +1,6 @@
 ﻿namespace FindMaximum
 {
-    public class FindMaximumNumber
+    public class FindMaximum
     {
         public static int GetMaximum(int numberOne, int numberTwo, int numberThree)
         {
@@ -25,6 +25,20 @@
             if (numberThree.CompareTo(max) > 0)
             {
                 max = numberThree;
+            }
+            return max;
+        }
+
+        public static string GetMaximumString(string firstString, string secondString, string thirdString)
+        {
+            string max = firstString;
+            if (secondString.CompareTo(max) > 0)
+            {
+                max = secondString;
+            }
+            if (thirdString.CompareTo(max) > 0)
+            {
+                max = thirdString;
             }
             return max;
         }
