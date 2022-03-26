@@ -7,23 +7,25 @@ namespace FindMaximum
     {
         static void Main(string[] args)
         {
-            int numberOne = 34;
-            int numberTwo = 123;
-            int numberThree = 19;
-            //UC1 Find maximum integer
-            int maximum = FindMaximum.GetMaximum(numberOne, numberTwo, numberThree);
-            Console.WriteLine($"Maximum among [{numberOne}, {numberTwo}, " +
-                $"{numberThree}] is: {maximum}");
+            FindMaximums<int> maxInt = new FindMaximums<int>();
+            int maximum = maxInt.GetMaximum(12, 34, 56);
+            Console.WriteLine($"Maximum is: {maximum}");
+            FindMaximums<double> maxDouble = new FindMaximums<double>();
+            double maximumDouble = maxDouble.GetMaximum(12.3, 23.4, 20);
+            Console.WriteLine($"Maximum is: {maximumDouble}");
+            FindMaximums<string> maxString = new FindMaximums<string>();
+            string maximumString = maxString.GetMaximum("Apple", "Peach", "Banana");
+            Console.WriteLine($"Maximum is: {maximumString}");
 
-            // UC2 find Maximum Float
-            double maximumDouble = FindMaximum.GetMaximumFloat(12.3, 23.4, 20);
-            Console.WriteLine($"Maximum among [12.3, 23.4, 20] is: {maximumDouble}");
+            //UC4 take more than Three parameters
+            int[] array = { 1, 2, 300, 4, 5, 45, 100 };
+            string[] words = { "Apple", "Peach", "Banana", "Sankalp", "Kaithwas" };
 
-            // UC3 find maximum string
-            string maxString = FindMaximum.GetMaximumString("Apple", "Peach", "Banana");
-            Console.WriteLine("Maximum among [Apple, Peach, banana] is: " + maxString);
+            GenericMaximum<int> maxInts = new GenericMaximum<int>();
+            Console.WriteLine("Maximum value is " + maxInts.MaxValue(array));
+            GenericMaximum<string> maxStrings = new GenericMaximum<string>();
+            Console.WriteLine("Maximum value is " + maxStrings.MaxValue(words));
 
         }
-
     }
 }
