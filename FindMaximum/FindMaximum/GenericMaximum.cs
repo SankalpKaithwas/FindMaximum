@@ -6,6 +6,12 @@ namespace FindMaximum
 {
     internal class GenericMaximum<T> where T : IComparable
     {
+        public T[] value;
+
+        public GenericMaximum(T[] value)
+        {
+            this.value = value;
+        }
         public T[] Sort(T[] values)
         {
             Array.Sort(values);
@@ -16,7 +22,11 @@ namespace FindMaximum
             var sortedValues = Sort(values);
             return sortedValues[^1];//this returns the last element after sorting, which is max
         }
+        public void PrintMax()
+        {
+            var max = MaxValue(this.value);
+            Console.WriteLine("Max value is " + max);
+        }
 
-      
     }
 }

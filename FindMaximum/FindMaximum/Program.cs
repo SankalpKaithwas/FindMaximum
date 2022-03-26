@@ -17,14 +17,13 @@ namespace FindMaximum
             string maximumString = maxString.GetMaximum("Apple", "Peach", "Banana");
             Console.WriteLine($"Maximum is: {maximumString}");
 
-            //UC4 take more than Three parameters
             int[] array = { 1, 2, 300, 4, 5, 45, 100 };
             string[] words = { "Apple", "Peach", "Banana", "Sankalp", "Kaithwas" };
-
-            GenericMaximum<int> maxInts = new GenericMaximum<int>();
-            Console.WriteLine("Maximum value is " + maxInts.MaxValue(array));
-            GenericMaximum<string> maxStrings = new GenericMaximum<string>();
-            Console.WriteLine("Maximum value is " + maxStrings.MaxValue(words));
+            // UC5 print max
+            GenericMaximum<int> maxInts = new GenericMaximum<int>(array);
+            maxInts.PrintMax();
+            GenericMaximum<string> maxStrings = new GenericMaximum<string>(words);
+            maxStrings.PrintMax();
 
         }
     }
